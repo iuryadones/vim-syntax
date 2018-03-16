@@ -1,7 +1,7 @@
 " Vim color file
 " File:       iaxs-monokai.vim
 " Maintainer: Iury Xavier <iuryadones@gmail.com>
-" URL:        https://github.com/iuryxavier/vim-iaxs
+" URL:        https://github.com/iuryxavier/vim-syntax
 " Version:    1.0.0
 
 

@@ -66,7 +66,7 @@ syn match   pythonDot          '\.' display containedin=pythonDottedName
 
 syn match   pythonComment       '#.*$' display contains=pythonTodo,@Spell
 syn match   pythonRun           '\%^#!.*$'
-syn match   pythonCoding        '\%^.*\%(\n.*\)\?#.*coding[:=]\s*[0-9A-Za-z-_.]\+.*$'
+syn match   pythonCoding        '\%^#.*coding[:=]\s*[0-9A-Za-z-_.]\+.*$'
 syn keyword pythonTodo          TODO FIXME XXX contained
 
 "

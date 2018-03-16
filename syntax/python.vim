@@ -34,7 +34,6 @@ syn keyword pythonImport           import
 syn match pythonRaiseFromStatement '\<from\>'
 syn match pythonImport             '^\s*\zsfrom\>'
 
-syn keyword pythonStatement   print
 syn keyword pythonStatement   exec
 syn keyword pythonImport      as
 syn match   pythonFunction    '[a-zA-Z_][a-zA-Z0-9_]*' display contained
@@ -278,34 +277,34 @@ if v:version >= 508 || !exists('did_python_syn_inits')
     command -nargs=+ HiLink hi def link <args>
   endif
 
-  HiLink pythonStatement        Statement
-  HiLink pythonRaiseFromStatement   Statement
-  HiLink pythonImport           Include
-  HiLink pythonFunction         Function
-  HiLink pythonConditional      Conditional
-  HiLink pythonRepeat           Repeat
-  HiLink pythonException        Exception
-  HiLink pythonOperator         Operator
+  HiLink pythonStatement          Statement
+  HiLink pythonRaiseFromStatement Statement
+  HiLink pythonImport             Include
+  HiLink pythonFunction           Function
+  HiLink pythonConditional        Conditional
+  HiLink pythonRepeat             Repeat
+  HiLink pythonException          Exception
+  HiLink pythonOperator           Operator
 
-  HiLink pythonDecorator        Define
-  HiLink pythonDottedName       Function
-  HiLink pythonDot              Normal
+  HiLink pythonDecorator          Define
+  HiLink pythonDottedName         Function
+  HiLink pythonDot                Normal
 
-  HiLink pythonComment          Comment
-  HiLink pythonCoding           Special
-  HiLink pythonRun              Special
-  HiLink pythonTodo             Todo
+  HiLink pythonComment            Comment
+  HiLink pythonCoding             Special
+  HiLink pythonRun                Special
+  HiLink pythonTodo               Todo
 
-  HiLink pythonError            Error
-  HiLink pythonIndentError      Error
-  HiLink pythonSpaceError       Error
+  HiLink pythonError              Error
+  HiLink pythonIndentError        Error
+  HiLink pythonSpaceError         Error
 
-  HiLink pythonString           String
-  HiLink pythonRawString        String
-  HiLink pythonRawEscape        Special
+  HiLink pythonString             String
+  HiLink pythonRawString          String
+  HiLink pythonRawEscape          Special
 
-  HiLink pythonUniEscape        Special
-  HiLink pythonUniEscapeError   Error
+  HiLink pythonUniEscape          Special
+  HiLink pythonUniEscapeError     Error
 
   HiLink pythonBytes              String
   HiLink pythonBytesContent       String
@@ -321,31 +320,31 @@ if v:version >= 508 || !exists('did_python_syn_inits')
   HiLink pythonUniRawString       String
   HiLink pythonUniString          String
 
-  HiLink pythonStrFormatting    Special
-  HiLink pythonStrFormat        Special
-  HiLink pythonStrTemplate      Special
+  HiLink pythonStrFormatting      Special
+  HiLink pythonStrFormat          Special
+  HiLink pythonStrTemplate        Special
 
-  HiLink pythonDocTest          Special
-  HiLink pythonDocTest2         Special
+  HiLink pythonDocTest            Special
+  HiLink pythonDocTest2           Special
 
-  HiLink pythonNumber           Number
-  HiLink pythonHexNumber        Number
-  HiLink pythonOctNumber        Number
-  HiLink pythonBinNumber        Number
-  HiLink pythonFloat            Float
-  HiLink pythonNumberError      Error
-  HiLink pythonOctError         Error
-  HiLink pythonHexError         Error
-  HiLink pythonBinError         Error
+  HiLink pythonNumber             Number
+  HiLink pythonHexNumber          Number
+  HiLink pythonOctNumber          Number
+  HiLink pythonBinNumber          Number
+  HiLink pythonFloat              Float
+  HiLink pythonNumberError        Error
+  HiLink pythonOctError           Error
+  HiLink pythonHexError           Error
+  HiLink pythonBinError           Error
 
-  HiLink pythonBoolean          Boolean
-  HiLink pythonNone             Constant
+  HiLink pythonBoolean            Boolean
+  HiLink pythonNone               Constant
 
-  HiLink pythonBuiltinObj       Structure
-  HiLink pythonBuiltinFunc      Function
+  HiLink pythonBuiltinObj         Structure
+  HiLink pythonBuiltinFunc        Function
 
-  HiLink pythonExClass          Structure
-  HiLink pythonClassVar         Identifier
+  HiLink pythonExClass            Structure
+  HiLink pythonClassVar           Identifier
 
   delcommand HiLink
 endif

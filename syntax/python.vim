@@ -56,7 +56,7 @@ syn match pythonError              '[$?]\|\([-+@%&|^~]\)\1\{1,}\|\([=*/<>]\)\2\{
 " Decorators (new in Python 2.4)
 "
 
-syn match   pythonDecorator        '^\s*\zs@' display nextgroup=pythonDottedName skipwhite
+syn match   pythonDecorator        '@' display nextgroup=pythonDottedName skipwhite
 syn match   pythonDottedName       '[a-zA-Z_][a-zA-Z0-9_]*\%(\.[a-zA-Z_][a-zA-Z0-9_]*\)*' display contained
 syn match   pythonDottedName       '\%([^[:cntrl:][:space:][:punct:][:digit:]]\|_\)\%([^[:cntrl:][:punct:][:space:]]\|_\)*\%(\.\%([^[:cntrl:][:space:][:punct:][:digit:]]\|_\)\%([^[:cntrl:][:punct:][:space:]]\|_\)*\)*' display contained
 syn match   pythonDot              '\.' display containedin=pythonDottedName

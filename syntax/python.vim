@@ -25,6 +25,8 @@ endfunction
 syn keyword pythonStatement        break continue del return pass yield global assert lambda with
 syn keyword pythonStatement        raise nextgroup=pythonExClass skipwhite
 syn keyword pythonStatement        def class nextgroup=pythonFunction skipwhite
+syn keyword pythonStatement        exec
+
 syn keyword pythonClassVar         self cls
 syn keyword pythonRepeat           for while
 syn keyword pythonConditional      if elif else
@@ -34,52 +36,51 @@ syn keyword pythonImport           import
 syn match pythonRaiseFromStatement '\<from\>'
 syn match pythonImport             '^\s*\zsfrom\>'
 
-syn keyword pythonStatement   exec
-syn keyword pythonImport      as
-syn match   pythonFunction    '[a-zA-Z_][a-zA-Z0-9_]*' display contained
-syn keyword pythonStatement   nonlocal
-syn match   pythonStatement   '\v\.@<!<await>'
-syn match   pythonFunction    '\%([^[:cntrl:][:space:][:punct:][:digit:]]\|_\)\%([^[:cntrl:][:punct:][:space:]]\|_\)*' display contained
-syn match   pythonStatement   '\<async\s\+def\>' nextgroup=pythonFunction skipwhite
-syn match   pythonStatement   '\<async\s\+with\>'
-syn match   pythonStatement   '\<async\s\+for\>'
-syn cluster pythonExpression contains=pythonStatement,pythonRepeat,pythonConditional,pythonOperator,pythonNumber,pythonHexNumber,pythonOctNumber,pythonBinNumber,pythonFloat,pythonString,pythonBytes,pythonBoolean,pythonBuiltinObj,pythonBuiltinFunc
+syn keyword pythonImport           as
+syn match   pythonFunction         '[a-zA-Z_][a-zA-Z0-9_]*' display contained
+syn keyword pythonStatement        nonlocal
+syn match   pythonStatement        '\v\.@<!<await>'
+syn match   pythonFunction         '\%([^[:cntrl:][:space:][:punct:][:digit:]]\|_\)\%([^[:cntrl:][:punct:][:space:]]\|_\)*' display contained
+syn match   pythonStatement        '\<async\s\+def\>' nextgroup=pythonFunction skipwhite
+syn match   pythonStatement        '\<async\s\+with\>'
+syn match   pythonStatement        '\<async\s\+for\>'
+syn cluster pythonExpression       contains=pythonStatement,pythonRepeat,pythonConditional,pythonOperator,pythonNumber,pythonHexNumber,pythonOctNumber,pythonBinNumber,pythonFloat,pythonString,pythonBytes,pythonBoolean,pythonBuiltinObj,pythonBuiltinFunc
 "
 " Operators
 "
-syn keyword pythonOperator      and in is not or
-syn match pythonOperator        '\V=\|-\|+\|*\|@\|/\|%\|&\||\|^\|~\|<\|>\|!='
-syn match pythonError           '[$?]\|\([-+@%&|^~]\)\1\{1,}\|\([=*/<>]\)\2\{2,}\|\([+@/%&|^~<>]\)\3\@![-+*@/%&|^~<>]\|\*\*[*@/%&|^<>]\|=[*@/%&|^<>]\|-[+*@/%&|^~<]\|[<!>]\+=\{2,}\|!\{2,}=\+' display
+syn keyword pythonOperator         and in is not or
+syn match pythonOperator           '\V=\|-\|+\|*\|@\|/\|%\|&\||\|^\|~\|<\|>\|!='
+syn match pythonError              '[$?]\|\([-+@%&|^~]\)\1\{1,}\|\([=*/<>]\)\2\{2,}\|\([+@/%&|^~<>]\)\3\@![-+*@/%&|^~<>]\|\*\*[*@/%&|^<>]\|=[*@/%&|^<>]\|-[+*@/%&|^~<]\|[<!>]\+=\{2,}\|!\{2,}=\+' display
 
 "
 " Decorators (new in Python 2.4)
 "
 
-syn match   pythonDecorator    '^\s*\zs@' display nextgroup=pythonDottedName skipwhite
-syn match   pythonDottedName   '[a-zA-Z_][a-zA-Z0-9_]*\%(\.[a-zA-Z_][a-zA-Z0-9_]*\)*' display contained
-syn match   pythonDottedName   '\%([^[:cntrl:][:space:][:punct:][:digit:]]\|_\)\%([^[:cntrl:][:punct:][:space:]]\|_\)*\%(\.\%([^[:cntrl:][:space:][:punct:][:digit:]]\|_\)\%([^[:cntrl:][:punct:][:space:]]\|_\)*\)*' display contained
-syn match   pythonDot          '\.' display containedin=pythonDottedName
+syn match   pythonDecorator        '^\s*\zs@' display nextgroup=pythonDottedName skipwhite
+syn match   pythonDottedName       '[a-zA-Z_][a-zA-Z0-9_]*\%(\.[a-zA-Z_][a-zA-Z0-9_]*\)*' display contained
+syn match   pythonDottedName       '\%([^[:cntrl:][:space:][:punct:][:digit:]]\|_\)\%([^[:cntrl:][:punct:][:space:]]\|_\)*\%(\.\%([^[:cntrl:][:space:][:punct:][:digit:]]\|_\)\%([^[:cntrl:][:punct:][:space:]]\|_\)*\)*' display contained
+syn match   pythonDot              '\.' display containedin=pythonDottedName
 
 "
 " Comments
 "
 
-syn match   pythonComment       '#.*$' display contains=pythonTodo,@Spell
-syn match   pythonRun           '\%^#!.*$'
-syn match   pythonCoding        '\%^#.*coding[:=]\s*[0-9A-Za-z-_.].*$'
-syn keyword pythonTodo          TODO FIXME XXX contained
+syn match   pythonComment          '#.*$' display contains=pythonTodo,@Spell
+syn match   pythonRun              '\%^#!.*$'
+syn match   pythonCoding           '\%^.*\(\n.*\)\?#.*coding[:=]\s*[0-9A-Za-z-_.]\+.*$'
+syn keyword pythonTodo             TODO FIXME XXX contained
 
 "
 " Errors
 "
 
-syn match pythonError           '\<\d\+[^0-9[:space:]]\+\>' display
+syn match pythonError              '\<\d\+[^0-9[:space:]]\+\>' display
 
 " statements
-syn match pythonIndentError   '^\s*\%( \t\|\t \)\s*\S'me=e-1 display
+syn match pythonIndentError        '^\s*\%( \t\|\t \)\s*\S'me=e-1 display
 
 " Trailing space errors
-syn match pythonSpaceError    '\s\+$' display
+syn match pythonSpaceError         '\s\+$' display
 
 "
 " Strings

@@ -287,7 +287,7 @@ if v:version >= 508 || !exists('did_python_syn_inits')
   HiLink pythonException          Exception
   HiLink pythonOperator           Operator
 
-  HiLink pythonDecorator          Define
+  HiLink pythonDecorator          Operator
   HiLink pythonDottedName         Function
   HiLink pythonDot                Normal
 

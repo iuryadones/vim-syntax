@@ -21,12 +21,12 @@ else
 endif
 
 if !has("gui_running") && &t_Co < 256
-  if !exists("g:termcolor_16_monokai")
-      let g:termcolor_16_monokai=1
+  if !exists("g:termcolor_8bits")
+      let g:termcolor_8bits=1
   endif
 else
-  if !exists("g:termcolor_16_monokai")
-      let g:termcolor_16_monokai=0
+  if !exists("g:termcolor_8bits")
+      let g:termcolor_8bits=0
   endif
 endif
 
@@ -61,7 +61,7 @@ endfunction
 " Palettes
 " --------
 
-if g:termcolor_16_monokai == 0 && !($TERM == 'linux')
+if g:termcolor_8bits == 0 && !($TERM == 'linux')
     let s:addbg       = { "gui": "#5f875f", "cterm": "65" }
     let s:addfg       = { "gui": "#d7ffaf", "cterm": "193" }
     let s:aqua        = { "gui": "#66d9ef", "cterm": "81" }

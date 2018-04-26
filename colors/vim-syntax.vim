@@ -1,11 +1,11 @@
 " Vim color file
-" File:       iaxs-monokai.vim
+" File:       vim-syntax.vim
 " Maintainer: Iury Xavier <iuryadones@gmail.com>
 " URL:        https://github.com/iuryxavier/vim-syntax
 " Version:    1.0.0
 
 
-let colors_name = "iaxs-monokai"
+let colors_name = "vim-syntax"
 
 highlight clear
 

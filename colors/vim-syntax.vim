@@ -96,10 +96,10 @@ else
     let s:darkred     = { "gui": "#800000", "cterm": "1" }
     let s:delbg       = { "gui": "#FF0000", "cterm": "9" }
     let s:green       = { "gui": "#00FF00", "cterm": "10" }
-    let s:grey        = { "gui": "#808080", "cterm": "8" }
+    let s:grey        = { "gui": "#C0C0C0", "cterm": "7" }
     let s:lightblack  = { "gui": "#808080", "cterm": "8" }
-    let s:lightblack2 = { "gui": "#C0C0C0", "cterm": "7" }
-    let s:lightgrey   = { "gui": "#000000", "cterm": "15" }
+    let s:lightblack2 = { "gui": "#808080", "cterm": "8" }
+    let s:lightgrey   = { "gui": "#808080", "cterm": "8" }
     let s:orange      = { "gui": "#808000", "cterm": "3" }
     let s:pink        = { "gui": "#FF00FF", "cterm": "13" }
     let s:purple      = { "gui": "#800080", "cterm": "5" }

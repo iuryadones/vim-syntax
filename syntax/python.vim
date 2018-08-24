@@ -310,7 +310,7 @@ if v:version >= 508 || !exists('did_python_syn_inits')
   HiLink pythonBytes              String
   HiLink pythonBytesContent       String
   HiLink pythonBytesError         Error
-  HiLink pythonBytesEscape        Special
+  HiLink pythonBytesEscape        Operator
   HiLink pythonBytesEscapeError   Error
   HiLink pythonFString            String
   HiLink pythonRawBytes           String
